@@ -5,6 +5,7 @@ Created on Sat Sep 19 13:12:00 2020
 @author: Savio Coelho
 """
 import yaml
+import numpy as np
 
 class SummarizeDoc:
     
@@ -25,16 +26,30 @@ class SummarizeDoc:
         firstSent, restOfSent = sentences[0], sentences[1:]
         return firstSent, restOfSent
     
-    def findNumWords(self):
-        pass
+    def findSentLength(self, text):
+        return text.split()
     
-    def findTop3Sent(self):
-        pass
+    def findSentLengthArray(self, sentences):
+        return [self.findSentLength(sent) for sent in sentences]
     
-    def sentenceCombiner(self):
-        pass
+    def findTopSentence(self, sentLengths, sentences, n):
+        sortIdx = np.argsort(sentLengths)
+        topIdx = sortIdx[-n:]
+        topSentences = [sentences[i] for i in topIdx]
+        return topSentences
+    
+    def findSummary(self):
+        filePath =  self.config['data_path']['train_data']
+        text = self.loadDocs(filePath)
+        sentences = self.splitSentences(text)
+        firstSent, restOfSent = self.groupSentences(sentences)
+        sentLengths = self.findSentLengthArray(restOfSent)
+        topSentences = self.findTopSentence(sentLengths, restOfSent, self.config['sentence_num'])
+        allSentences = [firstSent] + topSentences
+        summary = ' '.join(allSentences)
+        return summary
     
 summarizeDocObj = SummarizeDoc()
-summarizeDocObj.config
 
 
+#Tortoise GIT or GIT Hub dektop can also be used; in case ur having issues; it has a self explanatory GUI; but knowing the commands are always useful while working on Linux boxes where no UI is available

@@ -1,0 +1,4 @@
+data_path:
+    train_data: "C:\ML_Deployment\data\train"
+    test_data: "C:\ML_Deployment\data\test"
+sentence_num: 3

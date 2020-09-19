@@ -11,7 +11,7 @@ from preprocessor import PreprocessDoc
 class SummarizeDoc:
     
     def __init__(self):
-        with open('./config/config.yml', 'r') as fl:
+        with open('../config/config.yml', 'r') as fl:
             self.config = yaml.load(fl)
     
     def loadDocs(self, filePath):
@@ -55,11 +55,9 @@ class SummarizeDoc:
         sentLengths = self.findSentLengthArray(restOfSent)
         topSentences = self.findTopSentence(sentLengths, restOfSent, self.config['sentence_num'])
         allSentences = [firstSent] + topSentences
-        summary = ' '.join(allSentences)
+        summary = '\n'.join(allSentences)
         return summary
     
 summarizeDocObj = SummarizeDoc()
 print("########################\n",summarizeDocObj.findSummary(),"\n########################")
 
-
-#Tortoise GIT or GIT Hub dektop can also be used; in case ur having issues; it has a self explanatory GUI; but knowing the commands are always useful while working on Linux boxes where no UI is available

@@ -1,4 +1,4 @@
 data_path:
     train_data: "C:/ML_Deployment/data/train/article1.txt"
     test_data: "C:/ML_Deployment/data/test/article1.txt"
-sentence_num: 3
+sentence_num: 5

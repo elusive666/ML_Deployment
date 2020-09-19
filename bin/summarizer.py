@@ -9,7 +9,7 @@ import yaml
 class SummarizeDoc:
     
     def __init__(self):
-        with open('../config/config.yml', 'r') as fl:
+        with open('./config/config.yml', 'r') as fl:
             self.config = yaml.load(fl)
     
     def loadDocs(self, filePath):
@@ -35,6 +35,6 @@ class SummarizeDoc:
         pass
     
 summarizeDocObj = SummarizeDoc()
-summarizeDocObj.loadConfig()
+summarizeDocObj.config
 
 

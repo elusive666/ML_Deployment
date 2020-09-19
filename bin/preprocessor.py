@@ -7,6 +7,7 @@ Created on Sat Sep 19 13:11:30 2020
 import re
 import nltk
 from nltk.corpus import stopwords
+from nltk.tokenize import word_tokenize
 
 class PreprocessDoc:
     
@@ -19,7 +20,7 @@ class PreprocessDoc:
         
         Parameters
         ----------
-        text : TYPE String
+        text : TYPE Strings
             DESCRIPTION.
 
         Returns
@@ -44,4 +45,4 @@ class PreprocessDoc:
         print(word_tokens) 
         print(filtered_sentence) 
     
-    print(specialCharRemoval("dasdasd231 $%^the $t^&uj"))
+    print(stopwordRemoval("dasdasd231 $%^the $t^&uj"))

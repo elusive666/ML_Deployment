@@ -60,4 +60,3 @@ class SummarizeDoc:
     
 summarizeDocObj = SummarizeDoc()
 print("########################\n",summarizeDocObj.findSummary(),"\n########################")
-

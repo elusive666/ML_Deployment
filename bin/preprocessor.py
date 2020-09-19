@@ -15,26 +15,13 @@ class PreprocessDoc:
     Module for PreProcessing articles
     """
     
-    def specialCharRemoval(text):
-        """
-        
-        Parameters
-        ----------
-        text : TYPE Strings
-            DESCRIPTION.
-
-        Returns
-        -------
-        TYPE String
-            DESCRIPTION. Modified text
-
-        """
+    def specialCharRemoval(self, text):
         return re.sub('[^A-Za-z0-9 ]+', '', text)
     
-    def tokenizeArticle():
-        pass
+    def convertToLower(self, text):
+        return text.lower()
     
-    def stopwordRemoval(text):
+    def stopwordRemoval(self, text):
         stop_words = set(stopwords.words('english'))   
         word_tokens = word_tokenize(text)           
         filtered_sentence = [w for w in word_tokens if not w in stop_words]          
@@ -45,4 +32,3 @@ class PreprocessDoc:
         print(word_tokens) 
         print(filtered_sentence) 
     
-    print(stopwordRemoval("dasdasd231 $%^the $t^&uj"))

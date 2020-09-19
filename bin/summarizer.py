@@ -50,6 +50,7 @@ class SummarizeDoc:
         return summary
     
 summarizeDocObj = SummarizeDoc()
+print(summarizeDocObj.findSummary())
 
 
 #Tortoise GIT or GIT Hub dektop can also be used; in case ur having issues; it has a self explanatory GUI; but knowing the commands are always useful while working on Linux boxes where no UI is available

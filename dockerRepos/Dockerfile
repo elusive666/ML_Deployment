@@ -9,7 +9,9 @@ RUN mkdir gaDeployment
 RUN cd gaDeployment
 RUN git clone https://github.com/elusive666/ML_Deployment.git
 #COPY dummy.txt gaDeployment/dummy.txt
+#ENV JAVA_HOME /usr/local
 WORKDIR ML_Deployment
 RUN pip3 install -r requirements.txt
-WORKDIR ML_Deployment/bin
+
+WORKDIR bin
 CMD ["python3", "summaryService.py"]

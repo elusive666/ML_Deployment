@@ -27,4 +27,4 @@ def find_Summary():
     summary = summarizeObj.findSummary()
     return summary
 
-app.run(host='localhost', port=8023)
+app.run(host='0.0.0.0', port=80)

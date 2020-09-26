@@ -11,7 +11,7 @@ from preprocessor import PreprocessDoc
 class SummarizeDoc:
     
     def __init__(self):
-        with open('./config/config.yml', 'r') as fl:
+        with open('../config/config.yml', 'r') as fl:
             #. ./ML_Deployment/config/config.yml
             self.config = yaml.load(fl)
     

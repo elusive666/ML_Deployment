@@ -59,5 +59,5 @@ class SummarizeDoc:
         summary = '\n'.join(allSentences)
         return summary
     
-summarizeDocObj = SummarizeDoc()
-print("########################\n",summarizeDocObj.findSummary(),"\n########################")
+#summarizeDocObj = SummarizeDoc()
+#print("########################\n",summarizeDocObj.findSummary(),"\n########################")
